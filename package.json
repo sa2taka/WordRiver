@@ -1,0 +1,12 @@
+{
+  "name": "WordRiver",
+  "version": "1.0.0",
+  "description": "This is River of Word.",
+  "main": "index.js",
+  "repository": "https://github.com/sa2taka/WordRiver",
+  "author": "sa2taka",
+  "license": "MIT",
+  "dependencies": {
+    "socket.io": "^2.1.0"
+  }
+}
