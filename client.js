@@ -1,3 +1,5 @@
+var messages = []
+
 window.onload = () => {
   var socket = io.connect('localhost:3000')
 
@@ -6,6 +8,22 @@ window.onload = () => {
   }, false)
 
   socket.on('flow', msg => {
-    console.log(msg)
+    messages.unshift(msg)
+    updateMessage()
   })
+}
+
+function updateMessage () {
+  if (messages.length > 5) {
+    messages.pop()
+  }
+
+  target = document.getElementById("received")
+  innerText = ""
+
+  messages.forEach(msg => {
+    innerText += '<div class="message">' + msg + '</div>'
+  })
+
+  target.innerHTML = innerText
 }
